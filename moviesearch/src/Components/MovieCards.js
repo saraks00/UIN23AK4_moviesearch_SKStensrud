@@ -11,12 +11,12 @@ const MovieCards = () => {
     const [movies, setMovies] = useState([])
 
     const getInfo = () => {
-        axios.get(api + apiKey + `&s=${name}` + "&type=movie" + "&page=1").then((mov) => {if (mov) {setMovies(mov.data.search)}})
+        axios.get(`${api}${apiKey}&s=${name}&type=movie&page1`).then((mov) => {if (mov) {setMovies(mov.data.search)}})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        movieList()
+        getInfo()
     }
    
 
