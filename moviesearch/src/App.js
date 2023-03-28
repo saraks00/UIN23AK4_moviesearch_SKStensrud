@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import './css/main.css'
 import {Link} from "react-router-dom"
 import MovieCards from './Components/MovieCards';
 import MoviePage from './Components/MoviePage';
