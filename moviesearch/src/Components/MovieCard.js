@@ -1,13 +1,16 @@
-export default function MovieCard(){
+import {Link} from 'react-router-dom'
+
+export default function MovieCard({img, title, year, gen, dir, act, awards, slug}){
     return (
-        <section>
-            <img />
-            <h2></h2>
-            <p><span>Year:</span></p>
-            <p><span>Genre:</span></p>
-            <p><span>Director:</span></p>
-            <p><span>Actors/Actresses:</span></p>
-            <p><span>Awards:</span></p>
-        </section>
+        <article>
+            <img src={img} alt={title} />
+            <h2>{title}</h2>
+            <p>Year:<span>{year}</span></p>
+            <p>Genre:<span>{gen}</span></p>
+            <p>Director:<span>{dir}</span></p>
+            <p>Actors/Actresses:<span>{act}</span></p>
+            <p>Awards:<span>{awards}</span></p>
+            <Link to={slug} className="link"></Link>
+        </article>
     )
 }
