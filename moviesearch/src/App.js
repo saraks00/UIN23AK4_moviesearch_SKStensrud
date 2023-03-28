@@ -9,11 +9,24 @@ function App() {
   const [movies, setMovies] = useState([])
   const [search, setSearch] = useState('')
 
-  const getMovies = async() => {
-    const response = await fetch(`http://www.omdbapi.com/?s=${setSearch}&apikey=eeca3438`)
-    const data = await response.json()
-    setMovies(data.search)
-  }
+  const getMovies = async (setSearch) => {
+    const url = `http://www.omdbapi.com/?s=${setSearch}&type=movie&plot=full&apikey=25dbba7e&r=json`;
+
+    const response = await fetch(url);
+    const responseJson = await response.json();
+
+    if (responseJson.Search) {
+      const moviesWithInfo = await Promise.all(
+          responseJson.Search.map(async (movie) => {
+            const movieUrl = `http://www.omdbapi.com/?i=${movie.imdbID}&plot=full&apikey=25dbba7e&r=json`;
+            const movieResponse = await fetch(movieUrl);
+            const movieResponseJson = await movieResponse.json();
+            return { ...movie, ...movieResponseJson };
+          })
+      );
+      setMovies(moviesWithInfo);
+    }
+  };
   useEffect(() => { getMovies()}, [search])
   console.log('movies:', movies)
   return (
