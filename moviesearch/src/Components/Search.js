@@ -1,24 +1,22 @@
 import { useState } from 'react';
 
-export default function Search({ setSearch, getMovies }) {
-    const [searchValue, setSearchValue] = useState('')
-  
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      setSearch(searchValue)
-      getMovies()
-      setSearchValue('') // clear input after search
-    }
-  
+export default function Search({ setSearch }) {
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setSearch(searchQuery);
+    };
+
     return (
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search for a movie"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-    )
-  }
+        <form onSubmit={handleSearch}>
+            <input
+                type="text"
+                placeholder="Search movies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button type="submit">Search</button>
+        </form>
+    );
+}
