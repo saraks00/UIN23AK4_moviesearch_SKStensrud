@@ -1,17 +1,17 @@
-export default function Search({setSearch, getMovies}){
-    const handleSubmit = (event) => {
-        event.preventDefault()
-    }
+import { useState } from 'react';
 
-    const handleSearch = (event) => {
-        setSearch(event.target.value)
-        console.log(event.target.value)
-    }
+export default function Search({setSearch}) {
+  const [searchQuery, setSearchQuery] = useState('')
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <input type="search" onChange={handleSearch} />
-            <button type="submit" onClick={getMovies}>Søk</button>
-        </form>
-    )
+  const handleSearch = (e) => {
+    e.preventDefault()
+    setSearch(searchQuery)
+  }
+
+  return (
+    <form onSubmit={handleSearch}>
+      <input type="text" placeholder="Search movies..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+      <button type="submit">Search</button>
+    </form>
+  )
 }

@@ -7,14 +7,15 @@ import MoviePage from './Components/MoviePage';
 
 function App() {
   const [movies, setMovies] = useState([])
-  const [setSearch] = useState('movie')
+  const [search, setSearch] = useState('')
 
   const getMovies = async() => {
     const response = await fetch(`http://www.omdbapi.com/?s=${setSearch}&apikey=eeca3438`)
     const data = await response.json()
     setMovies(data.search)
   }
-  useEffect(() => { getMovies()}, [])
+  useEffect(() => { getMovies()}, [search])
+  console.log('movies:', movies)
   return (
     <div id="container">
     <header>
@@ -24,7 +25,7 @@ function App() {
     </header>
     <main>
       <Routes>
-        <Route index element={<MovieCards movies={movies} setSearch={setSearch} getMovies={getMovies} />} />
+        <Route index element={<MovieCards movies={movies} setSearch={setSearch} />} />
         <Route path=':slug' element={<MoviePage movies={movies} />} />
       </Routes>
     </main>
