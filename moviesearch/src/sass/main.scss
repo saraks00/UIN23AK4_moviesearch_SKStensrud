@@ -1,3 +1,44 @@
 body{
     background-color: #002B5B;
 }
+
+#container{
+    display: grid;
+    a{
+        color: #EA5455;
+        :hover{
+            color: #E4DCCF;
+        }
+        h1 {
+        margin: 2rem;
+        }
+    }
+
+    main{
+        margin: auto;
+        color: #E4DCCF;
+        text-align: center;
+        width: 1200px;
+        input{
+           padding: 12px 30px; 
+           border: #EA5455 2px solid;
+           border-radius: 5px;
+        }
+        button{
+            padding: 12px;
+            border-radius: 4px;
+        }
+        .movie-list{
+            color: #E4DCCF;
+            text-align: center;
+            display: inline-block;
+            article{
+                margin: 1rem;
+                padding: 10px;
+                border: #E4DCCF 1px solid;
+                width: 400px;
+                height: fit-content;
+            }
+        }
+    }
+}
