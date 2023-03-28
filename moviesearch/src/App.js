@@ -7,7 +7,7 @@ import MoviePage from './Components/MoviePage';
 
 function App() {
   const [movies, setMovies] = useState([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('james+bond')
 
   const getMovies = async (setSearch) => {
     const url = `http://www.omdbapi.com/?s=${setSearch}&type=movie&plot=full&apikey=25dbba7e&r=json`;
@@ -27,7 +27,7 @@ function App() {
       setMovies(moviesWithInfo);
     }
   };
-  useEffect(() => { getMovies()}, [search])
+  useEffect(() => { getMovies(search)}, [])
   console.log('movies:', movies)
   return (
     <div id="container">
