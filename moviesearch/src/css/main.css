@@ -1,6 +1,45 @@
 body {
-  background-color: #E4DCCF;
-  color: #002B5B;
+  background-color: #002B5B;
+}
+
+#container {
+  display: grid;
+}
+#container a {
+  color: #EA5455;
+}
+#container a :hover {
+  color: #E4DCCF;
+}
+#container a h1 {
+  margin: 2rem;
+}
+#container main {
+  margin: auto;
+  color: #E4DCCF;
+  text-align: center;
+  width: 1200px;
+}
+#container main input {
+  padding: 12px 30px;
+  border: #EA5455 2px solid;
+  border-radius: 5px;
+}
+#container main button {
+  padding: 12px;
+  border-radius: 5px;
+}
+#container main .movie-list {
+  color: #E4DCCF;
+  text-align: center;
+  display: inline-block;
+}
+#container main .movie-list article {
+  margin: 1rem;
+  padding: 10px;
+  border: #E4DCCF 1px solid;
+  width: 400px;
+  height: fit-content;
 }
 
 /*# sourceMappingURL=main.css.map */
