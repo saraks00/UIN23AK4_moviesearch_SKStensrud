@@ -1,13 +1,15 @@
+@import "colors";
+
 body{
-    background-color: #002B5B;
+    background-color: $navy;
 }
 
 #container{
     display: grid;
     a{
-        color: #EA5455;
+        color: $difRed;
         :hover{
-            color: #E4DCCF;
+            color: $offWhite;
         }
         h1 {
         margin: 2rem;
@@ -16,12 +18,12 @@ body{
 
     main{
         margin: auto;
-        color: #E4DCCF;
+        color: $offWhite;
         text-align: center;
         width: 1200px;
         input{
            padding: 12px 30px; 
-           border: #EA5455 2px solid;
+           border: $difRed 2px solid;
            border-radius: 5px;
         }
         button{
@@ -29,15 +31,55 @@ body{
             border-radius: 4px;
         }
         .movie-list{
-            color: #E4DCCF;
+            color: $offWhite;
             text-align: center;
             display: inline-block;
             article{
                 margin: 1rem;
                 padding: 10px;
-                border: #E4DCCF 1px solid;
+                border: $difRed 1px solid;
                 width: 400px;
                 height: fit-content;
+                a{
+                    :hover{
+                        color: $offWhite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    main{
+        margin: auto;
+        color: $offWhite;
+        text-align: center;
+        width: 900px;
+        input{
+           padding: 12px 30px; 
+           border: $difRed 2px solid;
+           border-radius: 5px;
+        }
+        button{
+            padding: 12px;
+            border-radius: 4px;
+        }
+        .movie-list{
+            color: $offWhite;
+            text-align: center;
+            display: inline-block;
+            article{
+                margin: 1rem;
+                padding: 10px;
+                border: $difRed 1px solid;
+                width: 200px;
+                height: fit-content;
+                a{
+                    :hover{
+                        color: $offWhite;
+                    }
+                }
             }
         }
     }

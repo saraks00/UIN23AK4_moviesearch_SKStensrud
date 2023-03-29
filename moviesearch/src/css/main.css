@@ -37,9 +37,45 @@ body {
 #container main .movie-list article {
   margin: 1rem;
   padding: 10px;
-  border: #E4DCCF 1px solid;
+  border: #EA5455 1px solid;
   width: 400px;
   height: fit-content;
+}
+#container main .movie-list article a :hover {
+  color: #E4DCCF;
+}
+
+@media only screen and (max-width: 900px) {
+  main {
+    margin: auto;
+    color: #E4DCCF;
+    text-align: center;
+    width: 900px;
+  }
+  main input {
+    padding: 12px 30px;
+    border: #EA5455 2px solid;
+    border-radius: 5px;
+  }
+  main button {
+    padding: 12px;
+    border-radius: 4px;
+  }
+  main .movie-list {
+    color: #E4DCCF;
+    text-align: center;
+    display: inline-block;
+  }
+  main .movie-list article {
+    margin: 1rem;
+    padding: 10px;
+    border: #EA5455 1px solid;
+    width: 200px;
+    height: fit-content;
+  }
+  main .movie-list article a :hover {
+    color: #E4DCCF;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
