@@ -55,7 +55,7 @@ body{
         margin: auto;
         color: $offWhite;
         text-align: center;
-        width: 900px;
+        max-width: 900px;
         input{
            padding: 12px 30px; 
            border: $difRed 2px solid;
