@@ -10,7 +10,7 @@ export default function MovieCard({ img, title, year, gen, dir, act, awards, slu
         <p>Director: <span>{dir}</span></p>
         <p>Actors/Actresses: <span>{act}</span></p>
         <p>Awards: <span>{awards}</span></p>
-        <Link to={slug} className="link">View Details</Link> // add link text
+        <Link to={slug} className="link">View Details</Link>
       </article>
     )
   }
